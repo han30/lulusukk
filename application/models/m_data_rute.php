@@ -1,6 +1,6 @@
 <?php 
  
-class M_data extends CI_Model{
+class M_data_rute extends CI_Model{
 	function tampil_data(){
 		return $this->db->get('tb_rute');
 	}

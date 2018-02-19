@@ -323,8 +323,8 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
-                <li><a href=<?php echo base_url("admin"); ?>><i class="fa fa-circle-o"></i> Overview</a></li>
-                <li class="active"><a href=<?php echo base_url("admin/data_user"); ?>><i class="fa fa-table"></i> Data users</a></li>   
+                    <li><a href=<?php echo base_url("admin"); ?>><i class="fa fa-table"></i> Data users</a></li>
+                    <li><a href=<?php echo base_url("admin/rute"); ?>><i class="fa fa-table"></i> Data Rute</a></li>   
         </ul>
       </section>
       <!-- /.sidebar -->
@@ -360,29 +360,25 @@
             <form  action=<?php echo base_url("crud/tambah_rute_aksi"); ?> method="post">
               <div class="box-body">
                 <div class="form-group">
-                  <label></label>
+                  <label>Rute From</label>
                     <input type="hidden" class="form-control" name="id"  />
-                  <input type="text" class="form-control" name="fullname" />
+                  <input type="text" class="form-control" name="rute_from" />
                 </div>
                  <div class="form-group">
-                  <label>rute from</label>
-                  <input type="text" class="form-control" name="rute_from"/>
-                </div>
-                  <div class="form-group">
-                  <label >rute to</label>
+                  <label>Rute To</label>
                   <input type="text" class="form-control" name="rute_to"/>
                 </div>
                  <div class="form-group">
-                  <label >date</label>
-                  <input type="date" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
+                  <label >Departure At</label>
+                  <input type="date" class="form-control" name="depart_at" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
                 </div>
-                <div class="form-group">
-                  <label>Level</label>
-                  <select class="form-control" name="level">
-                    <option value="-">-- SELECT LEVEL --</option>
-                    <option  value="admin">Admin</option>
-                    <option value="user">User</option>
-                  </select>
+                  <div class="form-group">
+                  <label >Price</label>
+                  <input type="text" class="form-control" name="price"/>
+                </div>
+                  <div class="form-group">
+                  <label >Transportation Id</label>
+                  <input type="text" class="form-control" name="transpotation_id"/>
                 </div>
               </div>
               <!-- /.box-body -->
