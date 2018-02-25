@@ -334,7 +334,11 @@
         <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
                    <li><a href=<?php echo base_url("admin"); ?>><i class="fa fa-table"></i> Data users</a></li>
-                    <li><a href=<?php echo base_url("admin/rute"); ?>><i class="fa fa-table"></i> Data Rute</a></li>   
+                    <li><a href=<?php echo base_url("admin/rute"); ?>><i class="fa fa-table"></i> Data Rute</a></li> 
+                    <li><a href=<?php echo base_url("admin/customer"); ?>><i class="fa fa-table"></i> Data Customers</a></li>
+                    <li><a href=<?php echo base_url("admin/transportation"); ?>><i class="fa fa-table"></i> Data Transportation</a></li>
+                    <li><a href=<?php echo base_url("admin/transportation_type"); ?>><i class="fa fa-table"></i> Data Transportation Type</a></li>
+                    <li><a href=<?php echo base_url("admin/reservation"); ?>><i class="fa fa-table"></i> Data Reservation</a></li>  
         </ul>
       </section>
       <!-- /.sidebar -->

@@ -43,11 +43,11 @@ License URL: https://www.designmaz.net/licence/
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-35751449-15', 'auto');ga('send', 'pageview');</script></head>
 <body>
 	<!--header-->
-	<div class="header">
+<div class="header">
 		<div class="container">
 			<div class="header-grids">
 				<div class="logo">
-					<h1><a  href="index.html"><span>Travelad</span></a></h1>
+					<h1><a  href="<?php echo base_url();?>Welcome"><span>Travelad</span></a></h1>
 				</div>
 				<!--navbar-header-->
 				<div class="header-dropdown">
@@ -65,14 +65,10 @@ License URL: https://www.designmaz.net/licence/
 				<div class="top-nav">
 					<span class="menu"><img src="<?php echo base_url();?>asset/images/menu.png" alt="" /></span>
 					<ul class="nav1">
-						<li><a href="index.html">Flights</a></li>
-						<li><a href="hotels.html">Hotels</a></li>
-						<li><a href="holidays.html">Holidays</a></li>
-						<li><a href="flights-hotels.html">Flight+Hotel</a></li>
-						<li><a href="bus.html">Bus</a></li>
-						<li><a href="trains.html">Trains</a></li>
-						<li><a href="weekend.html">Weekend Getaways</a></li>
-						<li><a href="deals.html">Deals</a></li>
+						<li><a href="<?php echo base_url();?>Welcome">Flights</a></li>
+						<li class="active"><a href="<?php echo base_url();?>about">Abouts</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Deals</a></li>
 					</ul>
 					<div class="clearfix"> </div>
 					<!-- script-for-menu -->
@@ -89,20 +85,19 @@ License URL: https://www.designmaz.net/licence/
 				<div class="dropdown-grids">
 						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
 							<div id="loginBox">                
-								<form id="loginForm">
+								<form id="loginForm" method="post" action=<?php echo base_url('login/aksi_login') ?>>
 									<div class="login-grids">
 										<div class="login-grid-left">
 											<fieldset id="body">
 												<fieldset>
-													<label for="email">Email Address</label>
-													<input type="text" name="email" id="email">
+													<label for="email">Username</label>
+													<input type="text" name="username">
 												</fieldset>
 												<fieldset>
 													<label for="password">Password</label>
 													<input type="password" name="password" id="password">
 												</fieldset>
 												<input type="submit" id="login" value="Sign in">
-												<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
 											</fieldset>
 											<span><a href="#">Forgot your password?</a></span>
 											<div class="or-grid">
@@ -116,7 +111,7 @@ License URL: https://www.designmaz.net/licence/
 													<a href="#">Connect with Google</a>
 												</div>
 												<div class="button-bottom">
-													<p>New account? <a href="signup.html">Signup</a></p>
+													<p>New account? <a href="<?php echo base_url()?>signup">Signup</a></p>
 												</div>
 											</div>
 										</div>

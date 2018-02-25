@@ -366,7 +366,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3><?php echo  $this->db->count_all('tb_rute')?></h3>
+              <h3><?php echo  $this->db->count_all('tb_user')?></h3>
 
               <p>New Orders</p>
             </div>
@@ -396,7 +396,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3><?php echo  $this->db->count_all('tb_rute')?></h3>
+              <h3><?php echo  $this->db->count_all('tb_user')?></h3>
 
               <p>Jumlah User</p>
             </div>
@@ -411,7 +411,7 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3><?php echo  $this->db->count_all('tb_rute')?></h3>
+              <h3><?php echo  $this->db->count_all('tb_user')?></h3>
 
               <p>Unique Visitors</p>
             </div>
@@ -430,41 +430,39 @@
 
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Data Rute</h3>     
-                  <a href=<?php echo base_url("crud/tambah_rute/"); ?> class="btn btn-primary a-btn-slide-text" style="position:absolute;right:0;margin-right:10px; ">
+                <h3 class="box-title">Data users</h3>     
+                  <a href=<?php echo base_url("crud/tambah_customer/"); ?> class="btn btn-primary a-btn-slide-text" style="position:absolute;right:0;margin-right:10px; ">
                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           <span><strong>Add</strong></span>            
                         </a>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-                <table id="data_rute" class="table table-bordered table-striped">
+                <table id="data_user" class="table table-bordered table-striped">
                   <thead>
                     <tr>
                       <th>No id</th>
-                      <th>Rute From</th>
-                      <th>Rute To</th>
-                      <th>Departure At</th>
-                      <th>Price</th>
-                      <th>Transportation Id</th>
+                      <th>Name</th>
+                      <th>Address</th>
+                      <th>Phone</th>
+                      <th>Gender</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php  foreach ($tb_rute as $u) { ?>
+                    <?php  foreach ($tb_customer as $u) { ?>
                     <tr>
                       <td><?php echo $u->id; ?></td>
-                      <td><?php echo $u->rute_from; ?></td>
-                      <td><?php echo $u->rute_to; ?></td>
-                      <td><?php echo $u->depart_at; ?></td>
-                      <td><?php echo $u->price; ?></td>
-                      <td><?php echo $u->transpotation_id; ?></td>
+                      <td><?php echo $u->name; ?></td>
+                      <td><?php echo $u->address; ?></td>
+                      <td><?php echo $u->phone; ?></td>
+                      <td><?php echo $u->gender; ?></td>
                       <td>
-                        <a href=<?php echo base_url("crud/edit_rute/".$u->id); ?> class="btn btn-primary a-btn-slide-text">
+                        <a href=<?php echo base_url("crud/edit_customer/".$u->id); ?> class="btn btn-primary a-btn-slide-text">
                           <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                           <span><strong>Edit</strong></span>            
                         </a>
-                        <a href=<?php echo base_url("crud/hapus_rute/".$u->id); ?> class="btn btn-primary a-btn-slide-text">
+                        <a href=<?php echo base_url("crud/hapus_customer/".$u->id); ?> class="btn btn-primary a-btn-slide-text">
                          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                          <span><strong>Delete</strong></span>            
                        </a>

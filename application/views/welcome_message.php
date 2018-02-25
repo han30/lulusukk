@@ -67,7 +67,7 @@ License URL: https://www.designmaz.net/licence/
 					<span class="menu"><img src="<?php echo base_url();?>asset/images/menu.png" alt="" /></span>
 					<ul class="nav1">
 						<li class="active"><a href="#">Flights</a></li>
-						<li><a href="#">Abouts</a></li>
+						<li><a href="<?php echo base_url();?>about">Abouts</a></li>
 						<li><a href="#">Contact</a></li>
 						<li><a href="#">Deals</a></li>
 					</ul>
@@ -190,6 +190,7 @@ License URL: https://www.designmaz.net/licence/
 
 											<!---/End-date-piker---->
 											<div class="online_reservation">
+												<form id="search-form" method="post"> action=<?php echo base_url('search/rute') ?>>
 													<div class="b_room">
 														<div class="booking_ room">
 															<div class="reservation">
@@ -197,19 +198,29 @@ License URL: https://www.designmaz.net/licence/
 																	<li  class="span1_of_1 desti">
 																		 <h5>Flying from</h5>
 																		 <div class="book_date">
-																			 <form>
+																			 
 																				<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																				<input type="text" name="rute_from" placeholder="Type Departure City" class="typeahead1 input-md form-control tt-input" required="">
-																			 </form>
+																				<select id="country" onchange="change_country(this.value)" class="frm-field required form-control" name="rute_from">
+																					<option value="null">Jakarta</option>
+																					<option value="null">Palembang</option>         
+																					<option value="AX">Bali</option>
+																					<option value="AX">Solo</option>
+																			  </select>
+																			 
 																		 </div>					
 																	 </li>
 																	 <li  class="span1_of_1 left desti">
 																		 <h5>Flying to</h5>
 																		 <div class="book_date">
-																		 <form>
+																		 
 																			<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																			<input type="text" name="rute_to" placeholder="Type Destination City" class="typeahead1 input-md form-control tt-input" required="">
-																		 </form>
+																			<select id="country" onchange="change_country(this.value)" class="frm-field required form-control" name="rute_to">
+																					<option value="null">Jakarta</option>
+																					<option value="null">Palembang</option>         
+																					<option value="AX">Bali</option>
+																					<option value="AX">Solo</option>
+																			  </select>
+																		 
 																		 </div>		
 																	 </li>
 																	 <div class="clearfix"></div>
@@ -220,15 +231,14 @@ License URL: https://www.designmaz.net/licence/
 																	 <li  class="span1_of_1">
 																		 <h5>Departure</h5>
 																		 <div class="book_date">
-																		 <form>
+																		 
 																			<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 																			<input type="date" name="depart_at" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
-																		</form>
+																		
 																		 </div>		
 																	 </li>
 																	 <li class="span1_of_1 left">
 																		 <h5>Adults (18+)</h5>
-																		 <!----------start section_room----------->
 																		 <div class="section_room">
 																			  <select id="country" onchange="change_country(this.value)" class="frm-field required">
 																					<option value="null">1</option>
@@ -242,7 +252,6 @@ License URL: https://www.designmaz.net/licence/
 																	</li>
 																	<li class="span1_of_1 left tab-children">
 																		 <h5>Children (0-17)</h5>
-																		 <!----------start section_room----------->
 																		 <div class="section_room">
 																			  <select id="country" onchange="change_country(this.value)" class="frm-field required">
 																					<option value="null">1</option>
@@ -254,16 +263,7 @@ License URL: https://www.designmaz.net/licence/
 																			  </select>
 																		 </div>	
 																	</li>
-																	<li class="span1_of_1 economy">
-																		 <h5>Class</h5>
-																		 <!----------start section_room----------->
-																		 <div class="section_room">
-																			  <select id="country" onchange="change_country(this.value)" class="frm-field required">
-																					<option value="null">Economy</option>
-																					<option value="null">Business</option>     
-																			  </select>
-																		 </div>	
-																	</li>
+
 																	 <div class="clearfix"></div>
 																</ul>
 															</div>
@@ -271,9 +271,9 @@ License URL: https://www.designmaz.net/licence/
 																<ul>	
 																	 <li class="span1_of_3">
 																			<div class="date_btn">
-																				<form>
+																				
 																					<input type="submit" value="Search" />
-																				</form>
+																				
 																			</div>
 																	 </li>
 																	 <div class="clearfix"></div>
@@ -282,8 +282,8 @@ License URL: https://www.designmaz.net/licence/
 														</div>
 														<div class="clearfix"></div>
 													</div>
+												</form>
 											</div>
-											<!---->
 										</div>	
 								</div>
 							</div> 			        					            	      
@@ -296,14 +296,7 @@ License URL: https://www.designmaz.net/licence/
 		<!-- //container -->
 	</div>
 	<!-- //banner -->
-	<div class="move-text">
-		<div class="marquee">Ayo Bergabung Bersama Kami.<a href=<?php echo base_url("signup");?>>Here</a></div>
-		<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.marquee.min.js"></script>
-        <script>
-		  $('.marquee').marquee({ pauseOnHover: true });
-		  //@ sourceURL=pen.js
-		</script>
-	</div>
+	
 	<!-- banner-bottom -->
 	<div class="banner-bottom">
 		<!-- container -->
@@ -557,9 +550,7 @@ License URL: https://www.designmaz.net/licence/
 	<div class="popular-grids">
 		<!-- container -->
 		<div class="container">
-			<div class="popular-info">
-				<h3>Popular Places</h3>
-			</div>
+
 			<!-- slider -->
 			<div class="slider">
 				<div class="arrival-grids">			 
