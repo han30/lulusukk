@@ -12,13 +12,28 @@ class Search extends CI_Controller {
 		}
 	 }
 
-	function rute(){
-		$rute_from = $this->input->post('rute_from');
-		$rute_to = $this->input->post('rute_to');
-		$depart_at = $this->input->post('depart_at');
-		$where = "where rute_from like '" . $rute_from . "' and rute_to like '"  . $rute_to ."' and depart_at like '" . $depart_at . "'";
-		$query = "SELECT *  from tb_rute " . $where;
-		$data['rute'] = $this->db->query($query);
+	public function index(){
+		$rute_from = $this->input->get('rute_from');
+		$rute_to = $this->input->get('rute_to');
+		$depart_at = $this->input->get('depart_at');
+		$passanger = $this->input->get('passanger');
+		$class = $this->input->get('class');
+
+		$data = [
+			'depart_at' => $depart_at,
+			'rute_from' => $rute_from,
+			'rute_to' => $rute_to,
+			// 'price' => 
+			'class' => $class
+		];
+
+		$rute = $this->m_data_rute->tampil_data_where($data);
+
+		$data['rute'] = $rute;
 		$this->load->view('v_search_rute',$data);
+
+		// var_dump($rute);
 	}
+	// function rute(){
+		
 }

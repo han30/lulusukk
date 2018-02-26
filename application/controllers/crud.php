@@ -56,12 +56,14 @@ class Crud extends CI_Controller{
 		$rute_to = $this->input->post('rute_to');
 		$depart_at = $this->input->post('depart_at');
 		$price = $this->input->post('price');
+		$class = $this->input->post('class');
 		$transpotation_id = $this->input->post('transpotation_id');
 		$data = array(
 			'rute_from' => $rute_from,
 			'rute_to' => $rute_to,
 			'depart_at' => $depart_at,
 			'price' => $price,
+			'class' => $class,
 			'transpotation_id' => $transpotation_id
 		);
  
@@ -250,12 +252,14 @@ class Crud extends CI_Controller{
 	$rute_to = $this->input->post('rute_to');
 	$depart_at = $this->input->post('depart_at');
 	$price = $this->input->post('price');
+	$class = $this->input->post('class');
 	$transpotation_id = $this->input->post('transpotation_id');
 	$data = array(
 		'rute_from' => $rute_from,
 		'rute_to' => $rute_to,
 		'depart_at' => $depart_at,
 		'price' => $price,
+		'class' => $class,
 		'transpotation_id' => $transpotation_id,
 	);
  

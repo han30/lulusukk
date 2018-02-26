@@ -446,6 +446,7 @@
                       <th>Rute To</th>
                       <th>Departure At</th>
                       <th>Price</th>
+                      <th>Class</th>
                       <th>Transportation Id</th>
                       <th>Action</th>
                     </tr>
@@ -458,6 +459,7 @@
                       <td><?php echo $u->rute_to; ?></td>
                       <td><?php echo $u->depart_at; ?></td>
                       <td><?php echo $u->price; ?></td>
+                      <td><?php echo $u->class; ?></td>
                       <td><?php echo $u->transpotation_id; ?></td>
                       <td>
                         <a href=<?php echo base_url("crud/edit_rute/".$u->id); ?> class="btn btn-primary a-btn-slide-text">

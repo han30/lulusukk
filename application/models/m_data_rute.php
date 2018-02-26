@@ -20,5 +20,9 @@ class M_data_rute extends CI_Model{
 	function update_data($where,$data,$table){
 		$this->db->where($where);
 		$this->db->update($table,$data);
-	}	
+	}
+	function tampil_data_where($data){
+		$this->db->where($data);
+		return $this->db->get('tb_rute')->result();
+	}
 }

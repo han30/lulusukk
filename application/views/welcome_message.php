@@ -180,7 +180,7 @@ License URL: https://www.designmaz.net/licence/
 								<div class="facts">
 										<div class="booking-form">
 											<!---strat-date-piker---->
-											<link rel="stylesheet" href="<?php echo base_url();?>asset/css/jquery-ui.css" />
+											<link rel="stylesheet" href="css/jquery-ui.css" />
 											<script src="<?php echo base_url();?>asset/js/jquery-ui.js"></script>
 													  <script>
 															  $(function() {
@@ -190,37 +190,29 @@ License URL: https://www.designmaz.net/licence/
 
 											<!---/End-date-piker---->
 											<div class="online_reservation">
-												<form id="search-form" method="post"> action=<?php echo base_url('search/rute') ?>>
+												<form action="<?php echo base_url() ?>search" method="GET">
 													<div class="b_room">
-														<div class="booking_ room">
+														<div class="booking_room">
 															<div class="reservation">
 																<ul>		
 																	<li  class="span1_of_1 desti">
 																		 <h5>Flying from</h5>
 																		 <div class="book_date">
-																			 
-																				<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																				<select id="country" onchange="change_country(this.value)" class="frm-field required form-control" name="rute_from">
-																					<option value="null">Jakarta</option>
-																					<option value="null">Palembang</option>         
-																					<option value="AX">Bali</option>
-																					<option value="AX">Solo</option>
-																			  </select>
-																			 
+																			<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+																			<select class="form-control" name="rute_from">
+																				<option value="jakarta">Jakarta</option>
+																				<option value="bali">Bali</option>
+																			</select>
 																		 </div>					
 																	 </li>
 																	 <li  class="span1_of_1 left desti">
 																		 <h5>Flying to</h5>
 																		 <div class="book_date">
-																		 
 																			<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																			<select id="country" onchange="change_country(this.value)" class="frm-field required form-control" name="rute_to">
-																					<option value="null">Jakarta</option>
-																					<option value="null">Palembang</option>         
-																					<option value="AX">Bali</option>
-																					<option value="AX">Solo</option>
-																			  </select>
-																		 
+																				<select class="form-control" name="rute_to">
+																					<option value="jakarta">Jakarta</option>
+																					<option value="bali">Bali</option>
+																				</select>
 																		 </div>		
 																	 </li>
 																	 <div class="clearfix"></div>
@@ -231,16 +223,14 @@ License URL: https://www.designmaz.net/licence/
 																	 <li  class="span1_of_1">
 																		 <h5>Departure</h5>
 																		 <div class="book_date">
-																		 
 																			<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 																			<input type="date" name="depart_at" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
-																		
 																		 </div>		
 																	 </li>
 																	 <li class="span1_of_1 left">
-																		 <h5>Adults (18+)</h5>
+																		 <h5>Passanger</h5>
 																		 <div class="section_room">
-																			  <select id="country" onchange="change_country(this.value)" class="frm-field required">
+																			  <select id="country" name="passanger" onchange="change_country(this.value)" class="frm-field required">
 																					<option value="null">1</option>
 																					<option value="null">2</option>         
 																					<option value="AX">3</option>
@@ -250,20 +240,15 @@ License URL: https://www.designmaz.net/licence/
 																			  </select>
 																		 </div>	
 																	</li>
-																	<li class="span1_of_1 left tab-children">
-																		 <h5>Children (0-17)</h5>
+																	<li class="span1_of_1 economy">
+																		 <h5>Class</h5>
 																		 <div class="section_room">
-																			  <select id="country" onchange="change_country(this.value)" class="frm-field required">
-																					<option value="null">1</option>
-																					<option value="null">2</option>         
-																					<option value="AX">3</option>
-																					<option value="AX">4</option>
-																					<option value="AX">5</option>
-																					<option value="AX">6</option>
+																			  <select id="country" name="class" onchange="change_country(this.value)" class="frm-field required">
+																					<option value="economy">Economy</option>
+																					<option value="executive">Executive</option>     
 																			  </select>
 																		 </div>	
 																	</li>
-
 																	 <div class="clearfix"></div>
 																</ul>
 															</div>
@@ -271,9 +256,7 @@ License URL: https://www.designmaz.net/licence/
 																<ul>	
 																	 <li class="span1_of_3">
 																			<div class="date_btn">
-																				
-																					<input type="submit" value="Search" />
-																				
+																					<input class="resp-tab-item" type="submit" value="Search" />
 																			</div>
 																	 </li>
 																	 <div class="clearfix"></div>
@@ -284,6 +267,7 @@ License URL: https://www.designmaz.net/licence/
 													</div>
 												</form>
 											</div>
+											<!---->
 										</div>	
 								</div>
 							</div> 			        					            	      
@@ -306,69 +290,13 @@ License URL: https://www.designmaz.net/licence/
 			</div>
 			<div class="banner-bottom-grids">
 				<div class="col-md-4 banner-bottom-grid">
-					<div class="destinations">
-						 <ul>
-							<li class="button"><a href="#">Goa Popular Hotels</a>
-								<li class="dropdown active">
-									<a href="#">
-										<div class="destinations-grid">
-											<img src="<?php echo base_url();?>asset/images/a1.jpg" alt="" />
-										</div>
-										<div class="destinations-grid-info">
-											<div class="destinations-hotel">Lorem ipsum dolor sit amet , Goa</div>
-											<div class="destinations-star"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span></div>
-											<div class="destinations-price">$100</div>
-											<div class="clearfix"> </div>
-										</div>
-									</a>
-								 </li>
-							</li>
-							<li class="button"><a href="#">Bangalore Popular Hotels</a>
-								<li class="dropdown">
-									<a href="#">
-										<div class="destinations-grid">
-											<img src="<?php echo base_url();?>asset/images/a4.jpg" alt="" />
-										</div>
-										<div class="destinations-grid-info">
-											<div class="destinations-hotel">Lorem ipsum dolor sit amet , Bangalore</div>
-											<div class="destinations-star"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span></div>
-											<div class="destinations-price">$100</div>
-											<div class="clearfix"> </div>
-										</div>
-									</a>
-								 </li>
-							</li>							
-							<li class="button"><a href="#">Bangkok Popular Hotels</a>
-								 <li class="dropdown">
-									<a href="#">
-										<div class="destinations-grid">
-											<img src="<?php echo base_url();?>asset/images/a3.jpg" alt="" />
-										</div>
-										<div class="destinations-grid-info">
-											<div class="destinations-hotel">Lorem ipsum dolor sit amet , Bangkok</div>
-											<div class="destinations-star"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span></div>
-											<div class="destinations-price">$240</div>
-											<div class="clearfix"> </div>
-										</div>
-									</a>
-								 </li>
-							</li>
-							<li class="button"><a href="#">Malaysia Popular Hotels</a>
-								 <li class="dropdown">
-									<a href="#">
-										<div class="destinations-grid">
-											<img src="<?php echo base_url();?>asset/images/a1.jpg" alt="" />
-										</div>
-										<div class="destinations-grid-info">
-											<div class="destinations-hotel">Lorem ipsum dolor sit amet , Malaysia</div>
-											<div class="destinations-star"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span></div>
-											<div class="destinations-price">$320</div>
-											<div class="clearfix"> </div>
-										</div>
-									</a>
-								 </li>
-							 </li>							 
-						 </ul>
+					<div class="banner-bottom-right">
+							<img src="<?php echo base_url();?>asset/images/a3.jpg" alt="" />
+							<div class="destinations-grid-info tours">
+									<h5>New Hotel Experiences at Your Favourite Destinations</h5>
+									<p>Integer eget aliquam nibh. Donec blandit volutpat libero id lacinia</p>
+									<p class="b-period">Book Period: Now - 7 September 2015 | Travel Period: Now - 31 October 2015 </p>
+							</div>
 					</div>
 					<div class="choose">
 						<div class="choose-info">
@@ -381,8 +309,8 @@ License URL: https://www.designmaz.net/licence/
 									<span>Million</span>
 								</div>
 								<div class="choose-right">
-									<a href="#">Aliquam faucibus vehicula vulputate</a>
-									<p>Maecenas euismod tortor a tristique convallis diam eros aliquam.</p>
+									<b>Banyak Pilihan Maskapai</b>
+									<p>Kami bekerjasama dengan maskapai-maskapai berkualitas.</p>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
@@ -391,8 +319,8 @@ License URL: https://www.designmaz.net/licence/
 									<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
 								</div>
 								<div class="choose-right">
-									<a href="#">Sed tincidunt consectetur augue</a>
-									<p>Nulla bibendum libero in nunc eleifend tincidunt. Aliquam quis molestie lectus</p>
+									<b>Banyak Rutenya</b>
+									<p>Kami siap mengantarkan anda ke kota tujuan anda</p>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
@@ -401,143 +329,43 @@ License URL: https://www.designmaz.net/licence/
 									<h6>$</h6>
 								</div>
 								<div class="choose-right">
-									<a href="#">Nullam et arcu interdum, accumsan justo</a>
-									<p>Maecenas dapibus eu purus vel imperdiet. Maecenas cursus, arcu sed tempus </p>
+									<b>Hemat Biaya</b>
+									<p>Naik pesawat dengan biaya murah tapi kualitas mewah</p>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 banner-bottom-grid">
-					<div class="banner-bottom-middle">
-						<a href="#">
-							<img src="<?php echo base_url();?>asset/images/a2.jpg" alt="" />
-							<div class="destinations-grid-info tours">
-								<h5>Book your next Malaysia holiday!</h5>
-								<p>Integer eget aliquam nibh. Donec blandit volutpat libero id lacinia</p>
-								<p class="b-period">Book Period: Now - 7 September 2015 | Travel Period: Now - 31 October 2015 </p>
-							</div>
-						</a>
-					</div>
-					<div class="top-destinations-grids">
-						<div class="top-destinations-info">
-							<h4>Top Destinations</h4>
+				<div class="col-md-8 banner-bottom-grid holidays-bottom-grid">
+					<div class="holidays-grids">
+						<div class="holidays-info">
+							<h4>Explore Destinations</h4>
 						</div>
-						<div class="top-destinations-bottom">
-							<div class="td-grids">
-								<div class="col-xs-3 td-left">
-									<img src="<?php echo base_url();?>asset/images/t1.jpg" alt="" />
-								</div>
-								<div class="col-xs-7 td-middle">
-									<a href="#">Donec libero id lacinia</a>
-									<p>Dapibus eu purus vel libero in nunc</p>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</div>
-								<div class="col-xs-2 td-right">
-									<p>$190</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="td-grids">
-								<div class="col-xs-3 td-left">
-									<img src="<?php echo base_url();?>asset/images/t2.jpg" alt="" />
-								</div>
-								<div class="col-xs-7 td-middle">
-									<a href="#">Donec libero id lacinia</a>
-									<p>Dapibus eu purus vel libero in nunc</p>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</div>
-								<div class="col-xs-2 td-right">
-									<p>$213</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="td-grids">
-								<div class="col-xs-3 td-left">
-									<img src="<?php echo base_url();?>asset/images/t3.jpg" alt="" />
-								</div>
-								<div class="col-xs-7 td-middle">
-									<a href="#">Donec libero id lacinia</a>
-									<p>Dapibus eu purus vel libero in nunc</p>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</div>
-								<div class="col-xs-2 td-right">
-									<p>$176</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="td-grids">
-								<div class="col-xs-3 td-left">
-									<img src="<?php echo base_url();?>asset/images/t4.jpg" alt="" />
-								</div>
-								<div class="col-xs-7 td-middle">
-									<a href="#">Donec libero id lacinia</a>
-									<p>Dapibus eu purus vel libero in nunc</p>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</div>
-								<div class="col-xs-2 td-right">
-									<p>$490</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
+						<div class="holidays-grid">
+							<a href="products.html"><img src="<?php echo base_url();?>asset/images/h5.jpg" alt="" /></a>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4 banner-bottom-grid">
-					<div class="banner-bottom-right">
-						<a href="#">
-							<img src="<?php echo base_url();?>asset/images/a3.jpg" alt="" />
-							<div class="destinations-grid-info tours">
-									<h5>New Hotel Experiences at Your Favourite Destinations</h5>
-									<p>Integer eget aliquam nibh. Donec blandit volutpat libero id lacinia</p>
-									<p class="b-period">Book Period: Now - 7 September 2015 | Travel Period: Now - 31 October 2015 </p>
-							</div>
-						</a>
+					<div class="holidays-top-grids">
+						<div class="col-md-6 holidays-top-grid">
+							<a href="products.html"><img src="<?php echo base_url();?>asset/images/h2.jpg" alt="" /></a>
+						</div>
+						<div class="col-md-6 holidays-top-grid">
+							<a href="products.html"><img src="<?php echo base_url();?>asset/images/a4.jpg" alt="" /></a>
+						</div>
+						<div class="clearfix"> </div>
 					</div>
-					<div class="news-grids">
-						<div class="news-grids-info">
-							<h4>Latest News</h4>
+					<div class="holidays-top-grids">
+						<div class="col-md-6 holidays-top-grid">
+							<a href="products.html"><img src="<?php echo base_url();?>asset/images/a2.jpg" alt="" /></a>
 						</div>
-						<div class="news-grids-bottom">
-							<!-- date -->
-							<div id="design" class="date">
-								<div id="cycler">   
-									<div class="date-text">
-										<a href="#">August 15,2015</a>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-									</div>
-									<div class="date-text">
-										<a href="#">July 08,2015</a>
-										<p>Nullam non turpis sit amet metus tristique egestas et et orci.</p>
-									</div>
-									<div class="date-text">
-										<a href="#">February 15,2015</a>
-										<p>Duis venenatis ac ipsum vel ultricies in placerat quam</p>
-									</div>
-									<div class="date-text">
-										<a href="#">January 15,2015</a>
-										<p>Pellentesque ullamcorper fringilla ipsum, ornare dapibus velit volutpat sit amet.</p>
-									</div>
-									<div class="date-text">
-										<a href="#">September 24,2014</a>
-										<p>In lobortis ipsum mi, ac imperdiet elit pellentesque at.</p>
-									</div>
-								</div>
-								<script>
-									function cycle($item, $cycler){
-										setTimeout(cycle, 2000, $item.next(), $cycler);
-										
-										$item.slideUp(1000,function(){
-											$item.appendTo($cycler).show();        
-										});
-						
-										}
-									cycle($('#cycler div:first'),  $('#cycler'));
-								</script>
-							</div>
-							<!-- //date -->
+						<div class="col-md-6 holidays-top-grid">
+							<a href="products.html"><img src="<?php echo base_url();?>asset/images/h1.jpg" alt="" /></a>
 						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="holidays-grid">
+						<a href="products.html"><img src="<?php echo base_url();?>asset/images/h5.jpg" alt="" /></a>
 					</div>
 				</div>
 				<div class="clearfix"> </div>
@@ -556,19 +384,19 @@ License URL: https://www.designmaz.net/licence/
 				<div class="arrival-grids">			 
 					 <ul id="flexiselDemo1">
 						 <li>
-							 <a href="#"><img src="<?php echo base_url();?>asset/images/a3.jpg" alt=""/>
+							 <a><img src="<?php echo base_url();?>asset/images/garuda.jpg" alt=""/>
 							 </a>
 						 </li>
 						 <li>
-							 <a href="#"><img src="<?php echo base_url();?>asset/images/a2.jpg" alt=""/>
+							 <a><img src="<?php echo base_url();?>asset/images/airasia.jpg" alt=""/>
 							 </a>
 						 </li>
 						 <li>
-							 <a href="#"><img src="<?php echo base_url();?>asset/images/a4.jpg" alt=""/>
+							 <a><img src="<?php echo base_url();?>asset/images/citilink.jpg" alt=""/>
 							 </a>
 						 </li>
 						 <li>
-							 <a href="#"><img src="<?php echo base_url();?>asset/images/a1.jpg" alt=""/>
+							 <a><img src="<?php echo base_url();?>asset/images/lionair.jpg" alt=""/>
 							 </a>
 						 </li>
 						</ul>
@@ -598,7 +426,7 @@ License URL: https://www.designmaz.net/licence/
 						});
 						});
 						</script>
-						<script type="text/javascript" src="js/jquery.flexisel.js"></script>			 
+						<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.flexisel.js"></script>			 
 				</div>
 			</div>
 			<!-- //slider -->
@@ -608,93 +436,6 @@ License URL: https://www.designmaz.net/licence/
 	<!-- popular-grids -->
 	<!-- footer -->
 	<div class="footer">
-		<!-- container -->
-		<div class="container">
-			<div class="footer-top-grids">
-				<div class="footer-grids">
-					<div class="col-md-3 footer-grid">
-						<h4>Our Products</h4>
-						<ul>
-							<li><a href="#">Flight Schedule</a></li>
-							<li><a href="#">City Airline Routes</a></li>
-							<li><a href="#">International Flights</a></li>
-							<li><a href="#">International Hotels</a></li>
-							<li><a href="#">Bus Booking</a></li>
-							<li><a href="#">Domestic Airlines</a></li>
-							<li><a href="#">Holidays Trip</a></li>
-							<li><a href="#">Hotel Booking</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 footer-grid">
-						<h4>Company</h4>
-						<ul>
-							<li><a href="<?php echo base_url();?>about">About Us</a></li>
-							<li><a href="#">FAQs</a></li>
-							<li><a href="#">Terms &amp; Conditions</a></li>
-							<li><a href="#">Privacy </a></li>
-							<li><a href="#">Contact Us</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Feedback</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 footer-grid">
-						<h4>Travel Resources</h4>
-						<ul>
-							<li><a href="#">Holidays Packages</a></li>
-							<li><a href="#">Weekend Getaways</a></li>
-							<li><a href="#">International Airports</a></li>
-							<li><a href="#">Domestic Flights Booking</a></li>
-							<li><a href="#">Customer Support</a></li>
-							<li><a href="#">Cancel Bookings</a></li>
-							<li><a href="#">Print E-tickets</a></li>
-							<li><a href="#">Customer Forums</a></li>
-							<li><a href="#">Make a Payment</a></li>
-							<li><a href="#">Complete Booking</a></li>
-							<li><a href="#">Assurance Claim</a></li>
-							<li><a href="#">Retail Offices</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 footer-grid">
-						<h4>More Links</h4>
-						<ul class="chf_footer_list">
-							<li><a href="#">Flights Discount Coupons</a></li>
-							<li><a href="#">Domestic Airlines</a></li>
-							<li><a href="#">Indigo Airlines</a></li>
-							<li><a href="#">Air Asia</a></li>
-							<li><a href="#">Jet Airways</a></li>
-							<li><a href="#">SpiceJet</a></li>
-							<li><a href="#">GoAir</a></li>
-							<li><a href="#">Air India</a></li>
-							<li><a href="#">Domestic Flight Routes</a></li>
-							<li><a href="#">Indian City Flight</a></li>
-							<li><a href="#">Flight Sitemap</a></li>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<!-- news-letter -->
-				<div class="news-letter">
-					<div class="news-letter-grids">
-						<div class="col-md-4 news-letter-grid">
-							<p>Toll Free No : <span>1234-5678-901</span></p>
-						</div>
-						<div class="col-md-4 news-letter-grid">
-							<p class="mail">Email : <a href="mailto:info@example.com">mail@example.com</a></p>
-						</div>
-						<div class="col-md-4 news-letter-grid">
-							<form>
-								<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-								<input type="submit" value="Subscribe">
-							</form>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<!-- //news-letter -->
-			</div>
-		</div>
-		<!-- //container -->
 	</div>
 	<!-- //footer -->
 	<div class="footer-bottom-grids">

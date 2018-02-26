@@ -376,6 +376,15 @@
                   <label >Price</label>
                   <input type="text" class="form-control" name="price"/>
                 </div>
+                <div class="form-group">
+                  <label>Class</label>
+                  <select class="form-control" name="class">
+                    <option value="-">-- SELECT CLASS --</option>
+                    <option  value="economy">Economy</option>
+                    <option value="executive">Executive</option>
+                  </select>
+                </div>
+
                   <div class="form-group">
                   <label >Transportation Id</label>
                   <input type="text" class="form-control" name="transpotation_id"/>

@@ -125,7 +125,8 @@ License URL: https://www.designmaz.net/licence/
       </div>
     </div>
   </div>
-   <h3 class="box-title">Data users</h3>
+  <div class="container">
+   <h3 class="box-title">Data Rute</h3>
    <div class="box-body">
                 <table id="data_rute" class="table table-bordered table-striped">
                   <thead>
@@ -135,6 +136,7 @@ License URL: https://www.designmaz.net/licence/
                       <th>Rute To</th>
                       <th>Departure At</th>
                       <th>Price</th>
+                      <th>Class</th>
                       <th>Transportation Id</th>
                       <th>Action</th>
                     </tr>
@@ -147,105 +149,24 @@ License URL: https://www.designmaz.net/licence/
                       <td><?php echo $u->rute_to; ?></td>
                       <td><?php echo $u->depart_at; ?></td>
                       <td><?php echo $u->price; ?></td>
+                      <td><?php echo $u->class; ?></td>
                       <td><?php echo $u->transpotation_id; ?></td>
                       <td>
-                        <a href=<?php echo base_url("crud/edit_rute/".$u->id); ?> class="btn btn-primary a-btn-slide-text">
-                          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                          <span><strong>Book</strong></span>            
-                        </a>
+                        <a href=<?php echo base_url("reservation/".$u->id); ?> class="btn btn-primary a-btn-slide-text">
+                         <span aria-hidden="true"></span>
+                         <span><strong>Booking</strong></span>            
+                       </a>
                      </td>
                    </tr>
                    <?php } ?>
                  </tfoot>
                </table>
              </div>
+  </div>
     <!-- footer -->
   <div class="footer">
     <!-- container -->
     <div class="container">
-      <div class="footer-top-grids">
-        <div class="footer-grids">
-          <div class="col-md-3 footer-grid">
-            <h4>Our Products</h4>
-            <ul>
-              <li><a href="#">Flight Schedule</a></li>
-              <li><a href="#">City Airline Routes</a></li>
-              <li><a href="#">International Flights</a></li>
-              <li><a href="#">International Hotels</a></li>
-              <li><a href="#">Bus Booking</a></li>
-              <li><a href="#">Domestic Airlines</a></li>
-              <li><a href="#">Holidays Trip</a></li>
-              <li><a href="#">Hotel Booking</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 footer-grid">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="<?php echo base_url();?>about">About Us</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Terms &amp; Conditions</a></li>
-              <li><a href="#">Privacy </a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Feedback</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 footer-grid">
-            <h4>Travel Resources</h4>
-            <ul>
-              <li><a href="#">Holidays Packages</a></li>
-              <li><a href="#">Weekend Getaways</a></li>
-              <li><a href="#">International Airports</a></li>
-              <li><a href="#">Domestic Flights Booking</a></li>
-              <li><a href="#">Customer Support</a></li>
-              <li><a href="#">Cancel Bookings</a></li>
-              <li><a href="#">Print E-tickets</a></li>
-              <li><a href="#">Customer Forums</a></li>
-              <li><a href="#">Make a Payment</a></li>
-              <li><a href="#">Complete Booking</a></li>
-              <li><a href="#">Assurance Claim</a></li>
-              <li><a href="#">Retail Offices</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 footer-grid">
-            <h4>More Links</h4>
-            <ul class="chf_footer_list">
-              <li><a href="#">Flights Discount Coupons</a></li>
-              <li><a href="#">Domestic Airlines</a></li>
-              <li><a href="#">Indigo Airlines</a></li>
-              <li><a href="#">Air Asia</a></li>
-              <li><a href="#">Jet Airways</a></li>
-              <li><a href="#">SpiceJet</a></li>
-              <li><a href="#">GoAir</a></li>
-              <li><a href="#">Air India</a></li>
-              <li><a href="#">Domestic Flight Routes</a></li>
-              <li><a href="#">Indian City Flight</a></li>
-              <li><a href="#">Flight Sitemap</a></li>
-            </ul>
-          </div>
-          <div class="clearfix"> </div>
-        </div>
-        <!-- news-letter -->
-        <div class="news-letter">
-          <div class="news-letter-grids">
-            <div class="col-md-4 news-letter-grid">
-              <p>Toll Free No : <span>1234-5678-901</span></p>
-            </div>
-            <div class="col-md-4 news-letter-grid">
-              <p class="mail">Email : <a href="mailto:info@example.com">mail@example.com</a></p>
-            </div>
-            <div class="col-md-4 news-letter-grid">
-              <form>
-                <input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-                <input type="submit" value="Subscribe">
-              </form>
-            </div>
-            <div class="clearfix"> </div>
-          </div>
-        </div>
-        <!-- //news-letter -->
-      </div>
     </div>
     <!-- //container -->
   </div>
